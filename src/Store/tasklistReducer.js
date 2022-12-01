@@ -2,7 +2,6 @@ const defaultState = {
     taskLists:[],
     isTouch:true,
 }
-
 export const tasklistReducer = (state = defaultState, action) => {
     switch (action.type){
         case "ADD_TASK":

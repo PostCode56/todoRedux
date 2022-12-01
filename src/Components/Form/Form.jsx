@@ -3,6 +3,7 @@ import {FormTask, MyButtonStyled, StyledForm, TaskList, TitleTodo} from "./Form.
 import MyInput from "../UL/Input/MyInput";
 import {useDispatch, useSelector} from "react-redux";
 import classes from "./Formtasks.css"
+import {addTaskAction, removeTaskAction, touchTaskAction} from "../../Store/actions/todo";
 const Form = () => {
     const dispatch = useDispatch()
     const taskLists = useSelector(state => state.taskLists.taskLists)
@@ -15,17 +16,16 @@ const Form = () => {
                 id:Date.now(),
             }
             setValue("")
-            console.log(value)
-            dispatch({type:"ADD_TASK", payload :Post,})
+            dispatch(addTaskAction(Post))
         } else {
             alert("Введите заметку!")
         }
     }
     const removeTask = (task) =>{
-        dispatch({type:"REMOVE_TASK", payload: task})
+        dispatch(removeTaskAction(task))
     }
     const touchToDO = (task) =>{
-        dispatch({type:"TOUCH_TASK", payload: task})
+        dispatch(touchTaskAction(task))
     }
     return (
         <form action="src/Components/Form/Form" onSubmit={newPost}>
