@@ -1,6 +1,4 @@
-import Form from "./Form/Form";
-
-
+import Form from "../Components/Form/Form";
 function App() {
   return (
     <div className="App">
@@ -8,5 +6,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
