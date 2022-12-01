@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FormTask, MyButtonStyled, StyledForm, TaskList, TitleTodo} from "./Form.styles";
-import MyInput from "../UL/Input/MyInput";
+import MyInput from "../UI/Input/MyInput";
 import {useDispatch, useSelector} from "react-redux";
 import classes from "./Formtasks.css"
 import {addTaskAction, removeTaskAction, touchTaskAction} from "../../Store/actions/todo";
