@@ -1,15 +1,18 @@
-import {createStore, combineReducers} from "redux";
-import {tasklistReducer} from "./tasklistReducer";
-import {composeWithDevTools} from "redux-devtools-extension";
-import storage from 'redux-persist/lib/storage'
-import {persistReducer, persistStore} from "redux-persist";
+import { createStore, combineReducers } from 'redux';
+
+import { composeWithDevTools } from 'redux-devtools-extension';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from 'redux-persist';
+
+import { tasklistReducer } from './tasklistReducer';
+
 const persistConfig = {
-    key: 'root',
-    storage,
-}
+  key: 'root',
+  storage,
+};
 const rootReducer = combineReducers({
-    taskLists: tasklistReducer,
-})
-export const persistedReducer = persistReducer(persistConfig, rootReducer)
+  taskLists: tasklistReducer,
+});
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = createStore(persistedReducer, composeWithDevTools());
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);

@@ -1,0 +1,14 @@
+.textToDo_None{
+    width: 90%;
+    color: firebrick;
+    text-align: center;
+    overflow-wrap: break-word;
+    cursor:pointer;
+    text-decoration: line-through;
+}
+.textToDo{
+    width: 90%;
+    text-align: center;
+    overflow-wrap: break-word;
+    cursor:pointer;
+}

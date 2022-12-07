@@ -1,10 +1,11 @@
 import React from 'react';
-import {MyInputStyled} from "./MyInput.styles";
 
-const MyInput = (props) => {
-    return (
-        <MyInputStyled {...props}/>
-    );
-};
+import { MyInputStyled } from './MyInput.styles';
 
-export default MyInput;
+function StyledInput(props) {
+  return (
+    <MyInputStyled {...props} />
+  );
+}
+
+export default StyledInput;
