@@ -1,11 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { removeTaskAction, touchTaskAction } from '../../Store/actions/todo';
 
 import { RemoveButton, TaskStyledBlock, TaskToDO } from './Task.styles';
 import classes from './Task.css';
 
-function Task({ touchToDO, removeTask }) {
+function Task() {
   const taskLists = useSelector((state) => state.taskLists.taskLists);
+  const dispatch = useDispatch();
+
+  const removeTask = (task) => {
+    dispatch(removeTaskAction(task));
+  };
+
+  const touchToDO = (task) => {
+    dispatch(touchTaskAction(task));
+  };
+
   return (
     <div>
       {taskLists.map((task) => (
@@ -24,4 +36,5 @@ function Task({ touchToDO, removeTask }) {
     </div>
   );
 }
+
 export default Task;

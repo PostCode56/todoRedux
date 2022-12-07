@@ -29,14 +29,6 @@ function Form() {
     }
   };
 
-  const removeTask = (task) => {
-    dispatch(removeTaskAction(task));
-  };
-
-  const touchToDO = (task) => {
-    dispatch(touchTaskAction(task));
-  };
-
   return (
     <form action="src/Components/Form/Form" onSubmit={newPost}>
       <StyledForm>
@@ -55,10 +47,7 @@ function Form() {
         <TaskList>
           {taskLists.length > 0
             ? (
-              <Task
-                touchToDO={touchToDO}
-                removeTask={removeTask}
-              />
+              <Task />
             )
             : <TextNone>Записи отсуствуют</TextNone>}
         </TaskList>
